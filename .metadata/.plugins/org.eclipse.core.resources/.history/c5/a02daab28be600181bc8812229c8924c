@@ -1,0 +1,114 @@
+package test;
+import modelo.*;
+import java.util.*;
+
+public class OO1TestTema2 {
+
+	public static void main(String[] args) {
+		// Punto 1 Crear e imprimir el objeto agenda
+		try {
+			System.out.println("\n\n#####################  Punto 1 #############################");
+			Agenda a = new Agenda(new GregorianCalendar(2018,10,30,10, 0, 0), 18, 30);
+			System.out.println(a.toString());
+		}
+		catch(Exception e){
+			System.out.println("Excepcion: " + e.getMessage());
+		}
+		
+		// Punto 2 Agregar a agenda servicios e imprimir agenda y servicios
+		try {
+			System.out.println("\n\n#####################  Punto 2 #############################");
+			Agenda a = new Agenda(new GregorianCalendar(2018,10,30,10, 0, 0), 18, 30);
+			a.agregarLavado(new GregorianCalendar(2018,10,30,15,30,0), "AAA000", 200, 50.0d, true);
+			a.agregarCambioAceite(new GregorianCalendar(2018,10,30,14,30,0), "AAA111", 750, 300.0d, true);
+			a.agregarAlineacionBalanceo(new GregorianCalendar(2018,10,30,9,30,0), "AAA222", 500, 1200.0d, 2);
+			a.agregarLavado(new GregorianCalendar(2018,10,30,11,0,0), "AAA333", 200, 50.0d, false);
+			a.agregarAlineacionBalanceo(new GregorianCalendar(2018,10,30,13,0,0), "AAA4444", 800, 1500.0d, 2);
+			a.agregarCambioAceite(new GregorianCalendar(2018,10,30,17,30,0), "AAA555", 1050, 450.0, false);
+			System.out.println(a.toString());
+		}
+		catch(Exception e){
+			System.out.println("Error: " + e.getMessage());
+		}
+		
+		// Punto 3 Intentar agregar a la agenda
+		try {
+			System.out.println("\n\n#####################  Punto 3 #############################");
+			Agenda a = new Agenda(new GregorianCalendar(2018,10,30,10, 0, 0), 18, 30);
+			a.agregarLavado(new GregorianCalendar(2018,10,30,15,30,0), "AAA000", 200, 50.0d, true);
+			a.agregarCambioAceite(new GregorianCalendar(2018,10,30,14,30,0), "AAA111", 750, 300.0d, true);
+			a.agregarAlineacionBalanceo(new GregorianCalendar(2018,10,30,9,30,0), "AAA222", 500, 1200.0d, 2);
+			a.agregarLavado(new GregorianCalendar(2018,10,30,11,0,0), "AAA333", 200, 50.0d, false);
+			a.agregarAlineacionBalanceo(new GregorianCalendar(2018,10,30,13,0,0), "AAA4444", 800, 1500.0d, 2);
+			a.agregarCambioAceite(new GregorianCalendar(2018,10,30,17,30,0), "AAA555", 1050, 450.0, false);
+			a.agregarCambioAceite(new GregorianCalendar(2018,10,30,9,30,0), "AAA888", 1050, 450.0d, true);
+			System.out.println(a.toString());
+		}
+		catch(Exception e){
+			System.out.println("Error: " + e.getMessage());
+		}
+		// Punto 4 imprimir agenda con total a pagar y servicio brindado
+		try {
+			System.out.println("\n\n#####################  Punto 4 #############################");
+			Agenda a = new Agenda(new GregorianCalendar(2018,10,30,10, 0, 0), 18, 30);
+			a.agregarLavado(new GregorianCalendar(2018,10,30,15,30,0), "AAA000", 200, 50.0d, true);
+			a.agregarCambioAceite(new GregorianCalendar(2018,10,30,14,30,0), "AAA111", 750, 300.0d, true);
+			a.agregarAlineacionBalanceo(new GregorianCalendar(2018,10,30,9,30,0), "AAA222", 500, 1200.0d, 2);
+			a.agregarLavado(new GregorianCalendar(2018,10,30,11,0,0), "AAA333", 200, 50.0d, false);
+			a.agregarAlineacionBalanceo(new GregorianCalendar(2018,10,30,13,0,0), "AAA4444", 800, 1500.0d, 2);
+			a.agregarCambioAceite(new GregorianCalendar(2018,10,30,17,30,0), "AAA555", 1050, 450.0, false);
+					
+			for(int i=0;i<a.getLstTurnosServicio().size();i++) {
+				System.out.println(Funciones.traerFechaCortaHora(a.getLstTurnosServicio().get(i).getFechaHora())+" "+a.getLstTurnosServicio().get(i).traerServicioBrindado() +" "+ a.getLstTurnosServicio().get(i).calcularTotalAPagar());
+			}
+		}
+		catch(Exception e){
+			System.out.println("Error: " + e.getMessage());
+		}
+		
+		// Punto 5 imprimir ordinal y fecha horas de turnos posibles
+		try {
+			System.out.println("\n\n#####################  Punto 5 #############################");
+			Agenda a = new Agenda(new GregorianCalendar(2018,10,30,10, 0, 0), 18, 30);
+			a.agregarLavado(new GregorianCalendar(2018,10,30,15,30,0), "AAA000", 200, 50.0d, true);
+			a.agregarCambioAceite(new GregorianCalendar(2018,10,30,14,30,0), "AAA111", 750, 300.0d, true);
+			a.agregarAlineacionBalanceo(new GregorianCalendar(2018,10,30,9,30,0), "AAA222", 500, 1200.0d, 2);
+			a.agregarLavado(new GregorianCalendar(2018,10,30,11,0,0), "AAA333", 200, 50.0d, false);
+			a.agregarAlineacionBalanceo(new GregorianCalendar(2018,10,30,13,0,0), "AAA4444", 800, 1500.0d, 2);
+			a.agregarCambioAceite(new GregorianCalendar(2018,10,30,17,30,0), "AAA555", 1050, 450.0, false);
+			List<GregorianCalendar> lstTurnos= new ArrayList<GregorianCalendar>();
+			lstTurnos=a.generarTurnos();
+			for(int i=0;i<lstTurnos.size();i++) {
+				System.out.println(i+1+"° "+ Funciones.traerFechaCortaHora(lstTurnos.get(i)));
+			}
+		}
+		catch(Exception e){
+			System.out.println("Error: " + e.getMessage());
+		}
+		
+		//Punto 6 imprimir ordinal,fecha hora si esta libre o servicio asignado
+		try {
+			System.out.println("\n\n#####################  Punto 6 #############################");
+			Agenda a = new Agenda(new GregorianCalendar(2018,10,30,10, 0, 0), 18, 30);
+			a.agregarLavado(new GregorianCalendar(2018,10,30,15,30,0), "AAA000", 200, 50.0d, true);
+			a.agregarCambioAceite(new GregorianCalendar(2018,10,30,14,30,0), "AAA111", 750, 300.0d, true);
+			a.agregarAlineacionBalanceo(new GregorianCalendar(2018,10,30,9,30,0), "AAA222", 500, 1200.0d, 2);
+			a.agregarLavado(new GregorianCalendar(2018,10,30,11,0,0), "AAA333", 200, 50.0d, false);
+			a.agregarAlineacionBalanceo(new GregorianCalendar(2018,10,30,13,0,0), "AAA4444", 800, 1500.0d, 2);
+			a.agregarCambioAceite(new GregorianCalendar(2018,10,30,17,30,0), "AAA555", 1050, 450.0, false);
+			List<GregorianCalendar> lstTurnos= new ArrayList<GregorianCalendar>();
+			lstTurnos=a.generarTurnos();
+			for(int i=0;i<lstTurnos.size();i++) {
+				Servicio servicio=a.traerServicio(lstTurnos.get(i));
+				if(servicio==null) {
+					System.out.println(i+1+"° "+ Funciones.traerFechaCortaHora(lstTurnos.get(i))+" LIBRE");
+				}
+				else System.out.println(i+1+"° "+ Funciones.traerFechaCortaHora(lstTurnos.get(i))+" "+servicio.traerServicioBrindado()+" "+servicio.getDominio());
+			}
+		}
+		catch(Exception e){
+			System.out.println("Error: " + e.getMessage());
+		}
+	}
+
+}

@@ -1,0 +1,15 @@
+{
+    "folders": [
+        {
+            "path": "C:\\Users\\Marti\\Desktop\\MartinNoy\\41142737"
+        },
+        {
+            "path": "C:\\Users\\Marti\\Desktop\\Dominguez Juan Gabriel\\38692376\\38692376"
+        }
+    ],
+    "settings": {
+        "javascript.referencesCodeLens.enabled": true,
+        "typescript.implementationsCodeLens.enabled": true,
+        "typescript.referencesCodeLens.enabled": true
+    }
+}
